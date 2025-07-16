@@ -4,11 +4,10 @@
 
 This backend system allows:
 
-- Admin or users to create events.
+- create users and create events.
 - Users to register or unregister for events.
 - Events to be capacity-controlled.
 - Fetching upcoming events.
-- Viewing user-specific registrations.
 - Tracking event stats like total registrations and remaining seats
 
 - Node.js with Express.js
@@ -27,21 +26,21 @@ This backend system allows:
 
 events table:
 
-  Field     | Type         
+  Field       | Type         
 
-  id         SERIAL PRIMARY KEY 
- title      VARCHAR      
- dateTime   TIMESTAMP    
- location   VARCHAR      
- capacity   INTEGER      
+  id          SERIAL PRIMARY KEY 
+ title        VARCHAR      
+ dateTime     TIMESTAMP    
+ location      VARCHAR      
+ capacity      INTEGER      
 
  registrations table:
 
       Field   | Type    |
 
- id       SERIAL PRIMARY KEY 
- userId   INTEGER REFERENCES users(id) 
- eventId  INTEGER REFERENCES events(id) 
+ id          SERIAL PRIMARY KEY 
+ userId      INTEGER REFERENCES users(id) 
+ eventId     INTEGER REFERENCES events(id) 
 
  API Routes-
 
